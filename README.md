@@ -7,7 +7,7 @@
 - **Key Questions**:
   1. What are the genre associated with the highest mental health issues?
   2. How much impact hours of music listening have on anxiety, depression, and insomnia levels?
-  3. Can we accurately predict the axiety, depression, and insomnia level based on their music taste or frequency using maching learning models?
+  3. Can we accurately predict the anxiety, depression, and insomnia level based on their music taste or frequency using maching learning models?
 
 
 ## 2. Selection of Datasets
