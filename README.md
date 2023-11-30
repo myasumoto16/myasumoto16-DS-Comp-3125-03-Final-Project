@@ -56,26 +56,78 @@
 ### Q1: What are the genres associated with the highest mental health issues?
 **1. What are the genres associated with the highest anxiety levels?**
 
+| Rank | Genre               | Anxiety Level     |
+|------|---------------------|-----------|
+| 1    | **Folk**                | 6.566667  |
+| 2    | K-pop               | 6.230769  |
+| 3    | Hip hop             | 6.200000  |
+| 4    | Rock                | 6.122340  |
+| 5    | Lofi                | 6.100000  |
+
 ![Alt text](figures/anxiety_genre.png?raw=true "anxiety_genre")
 
 **2. What are the genres associated with the highest depression levels?**
 
+| Rank | Genre               | Depression Level     |
+|------|---------------------|-----------|
+| 1    | **Lofi**                | 6.600000  |
+| 2    | Hip hop             | 5.800000  |
+| 3    | EDM                 | 5.243243  |
+| 4    | Rock                | 5.236702  |
+| 5    | Metal               | 5.068182  |
+
+
 ![Alt text](figures/depression_genre.png?raw=true "depression_genre")
 
 **3. What are the genres associated with the highest insomnia levels?**
+
+| Rank | Genre               | Insomnia Level     |
+|------|---------------------|-----------|
+| 1    | **Lofi**                | 5.600000  |
+| 2    | Gospel              | 5.333333  |
+| 3    | Metal               | 4.556818  |
+| 4    | Video game music    | 4.000000  |
+| 5    | EDM                 | 3.972973  |
+
 
 ![Alt text](figures/insomnia_genre.png?raw=true "insomnia_genre")
 
 ### Q2: How much impact hours of music listening have on anxiety, depression, and insomnia levels?
 **1. How much impact hours of music listening have on anxiety level?**
 
+| Rank | Hours per day  | Anxiety Level    |
+|------|----------|------------|
+| 1    | 13.0     | 10.000000  |
+| 2    | 9.0      | 9.666667   |
+| 3    | 18.0     | 9.000000   |
+| 4    | 20.0     | 8.000000   |
+| 5    | 10.0     | 6.700000   |
+
+
 ![Alt text](figures/anxiety_hours.png?raw=true "anxiety_hours")
 
 **2. How much impact hours of music listening have on depression level?**
 
+| Rank | Hours per day  | Depression Level    |
+|------|----------|------------|
+| 1    | 13.0     | 10.000000  |
+| 2    | 20.0     | 10.000000  |
+| 3    | 14.0     | 10.000000  |
+| 4    | 18.0     | 8.000000   |
+| 5    | 12.0     | 7.111111   |
+
+
 ![Alt text](figures/depression_hours.png?raw=true "depression_hours")
 
 **3. How much impact hours of music listening have on insomnia level?**
+
+| Rank | Hours per day | Insomnia Level    |
+|------|----------|------------|
+| 1    | 13.0     | 10.000000  |
+| 2    | 20.0     | 10.000000  |
+| 3    | 14.0     | 8.000000   |
+| 4    | 9.0      | 7.000000   |
+| 5    | 15.0     | 6.000000   |
 
 ![Alt text](figures/insomnia_hours.png?raw=true "insomnia_hours")
 
@@ -83,24 +135,36 @@
 
 **1. Can we accurately predict the anxiety level based on hours per day spent on music listening?**
 
+Mean Squared Error:  7.927178846908276
+
 ![Alt text](figures/predict_anxiety_hours.png?raw=true "predict_anxiety_hours")
 
 **2. Can we accurately predict the depression level based on hours per day spent on music listening?**
 
+Mean Squared Error:  9.884870854441782
+
 ![Alt text](figures/predict_depression_hours.png?raw=true "predict_depression_hours")
 
-**4. Can we accurately predict the insomnia level based on hours per day spent on music listening?**
+**3. Can we accurately predict the insomnia level based on hours per day spent on music listening?**
+
+Mean Squared Error:  10.33583624994101
 
 ![Alt text](figures/predict_insomnia_hours.png?raw=true "predict_insomnia_hours")
 
-**5. Can we accurately predict the anxiety level based on their music taste?**
+**4. Can we accurately predict the anxiety level based on their music taste?**
+
+Mean Squared Error:  8.056713371052219
 
 ![Alt text](figures/predict_anxiety_genre.png?raw=true "predict_anxiety_genre")
 
-**6. Can we accurately predict the depression level based on their music taste?**
+**5. Can we accurately predict the depression level based on their music taste?**
+
+Mean Squared Error:  9.107010534791192
 
 ![Alt text](figures/predict_depression_genre.png?raw=true "predict_depression_genre")
 
-**3. Can we accurately predict the insomnia level based on their music taste?**
+**6. Can we accurately predict the insomnia level based on their music taste?**
+
+Mean Squared Error:  9.782376453165558
 
 ![Alt text](figures/predict_insomnia_genre.png?raw=true "predict_insomnia_genre")
