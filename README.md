@@ -137,37 +137,51 @@
 **1. Can we accurately predict the anxiety level based on hours per day spent on music listening?**
 
 **Mean Squared Error (MSE):  7.927178846908276.**
-- Since the MSE is about 7.927, the average value of error in prediction of anxiety level is approximately **2.81**. For example, if the model predicts the anxiety level of 6, the actual value could be between 3.19 and 8.81
+- Since the MSE is about 7.927, the average value of error in prediction of anxiety level is approximately **2.81**. For example, if the model predicts an anxiety level of 6, the actual value could be between 3.19 and 8.81
 
 ![Alt text](figures/predict_anxiety_hours.png?raw=true "predict_anxiety_hours")
+
+- In the figure above, we expect to see a linear relationship between actual and predicted anxiety values, which means as the predicted values increase, the actual values would increase. However, As seen in the figure, most of the predicted anxiety values are between 5 and 7 regardless of their corresponding actual anxiety levels. This observation aligns with the MSE of 7.927 as well since it's relatively large considering that the anxiety level collected is between 0 and 10. 
 
 **2. Can we accurately predict the depression level based on hours per day spent on music listening?**
 
 **Mean Squared Error:  9.884870854441782**
-- Since the MSE is about 9.884, the average value of error in prediction of anxiety level is approximately **3.14**. For example, if the model predicts the anxiety level of 6, the actual value could be between 2.86 and 9.14
+- Since the MSE is about 9.884, the average value of error in prediction of anxiety level is approximately **3.14**. For example, if the model predicts a depression level of 6, the actual value could be between 2.86 and 9.14
 
 ![Alt text](figures/predict_depression_hours.png?raw=true "predict_depression_hours")
 
+- In the figure above, we expect to see a linear relationship between actual and predicted depression values. However, most of the predicted depression values are between 4 and 7 regardless of their corresponding actual depression levels. This observation also aligns with the MSE of 9.884. 
+
 **3. Can we accurately predict the insomnia level based on hours per day spent on music listening?**
 **Mean Squared Error:  10.33583624994101**
-- Since the MSE is about 10.335, the average value of error in prediction of anxiety level is approximately **3.21**. For example, if the model predicts the anxiety level of 6, the actual value could be between 2.79 and 9.21
+- Since the MSE is about 10.335, the average value of error in prediction of anxiety level is approximately **3.21**. For example, if the model predicts an insomnia level of 6, the actual value could be between 2.79 and 9.21.
+  
 ![Alt text](figures/predict_insomnia_hours.png?raw=true "predict_insomnia_hours")
+
+- In the figure above, we expect to see a linear relationship between actual and predicted insomnia levels. However, most of the predicted insomnia levels are between 3 and 7 regardless of their corresponding actual insomnia levels. There is no linear progression in the graph. This observation also aligns with the MSE of 10.335. 
 
 **4. Can we accurately predict the anxiety level based on their music taste?**
 
 **Mean Squared Error:  8.056713371052219**
-- Since the MSE is about 8.056, the average value of error in prediction of anxiety level is approximately **2.83**. For example, if the model predicts the anxiety level of 6, the actual value could be between 3.17 and 8.83.
+- Since the MSE is about 8.056, the average value of error in prediction of anxiety level is approximately **2.83**. For example, if the model predicts an anxiety level of 6, the actual value could be between 3.17 and 8.83.
 
 ![Alt text](figures/predict_anxiety_genre.png?raw=true "predict_anxiety_genre")
 
+- In the figure above, we expect to see a linear relationship between actual and predicted anxiety levels. However, all of the predicted anxiety levels are between 4.8 and 6.4 regardless of their corresponding actual anxiety levels. There is no linear relationships observed in the graph. This observation also aligns with the MSE of 9.884. 
+
 **5. Can we accurately predict the depression level based on their music taste?**
 
-Mean Squared Error:  9.107010534791192
+**Mean Squared Error:  9.107010534791192**
+
+- Since the MSE is about 9.107, the average value of error in prediction of anxiety level is approximately **3.01**. For example, if the model predicts a depression level of 6, the actual value could be between 2.99 and 9.01
+
 
 ![Alt text](figures/predict_depression_genre.png?raw=true "predict_depression_genre")
 
 **6. Can we accurately predict the insomnia level based on their music taste?**
 
-Mean Squared Error:  9.782376453165558
+**Mean Squared Error:  9.782376453165558**
 
+- Since the MSE is about 10.335, the average value of error in prediction of anxiety level is approximately **3.12**. For example, if the model predicts an insomnia level of 6, the actual value could be between 2.88 and 9.12.
+  
 ![Alt text](figures/predict_insomnia_genre.png?raw=true "predict_insomnia_genre")
