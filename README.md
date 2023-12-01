@@ -4,6 +4,7 @@
 
 - Objective: Explore connections between music preferences and mental health.
 - Dataset: 'Music & Mental Health Survey Results' from Kaggle.
+- Code: ([Music and Mental Health Analysis.ipynb](https://github.com/myasumoto16/myasumoto16-DS-Comp-3125-03-Final-Project/blob/main/Music%20and%20Mental%20Health%20Analysis.ipynb))
 - **Key Questions**:
   1. What are the genre associated with the highest mental health issues?
   2. How much impact hours of music listening have on anxiety, depression, and insomnia levels?
@@ -34,23 +35,23 @@
 - Done for all questions
 
 ### 3.2 Machine Learning Models
-- For Q3, "Can we accurately predict the axiety, depression, and insomnia level based on their music taste or frequency using maching learning models?"
+- For Q3, "Can we accurately predict the anxiety, depression, and insomnia level based on their music taste or frequency using maching learning models?"
 - Utilize **sklearn models**:
-  - DecisionTreeClassifier.
-  - DecisionTreeRegressor.
+  - **DecisionTreeRegressor**
+  - a regression machine learning algorithm provided by sklearn, efficiently partitions input space, assigning mean values to regions. Its versatility in handling various data types, such as integers and strings makes it a powerful tool for accurate predictions for this project. 
 - Dataset Division:
-  - **Train** (80%)  and **test** (20%) subsets.
+  - **Train** (90%)  and **test** (10%) subsets.
   - Input and output sets.
   -   Input: ['Fav genre'] or ['Hours per day']
-  -   Output: ['Anxiety', 'Depression', 'Insomnia']
+  -   Output: ['Anxiety'], ['Depression'] or ['Insomnia']
 - Model Training:
   - Train subset used for model training with sklearn machine learning models
   - Test set evaluates prediction accuracy.
 - Evaluation Metrics:
-  - DecisionTreeClassifier: **accuracy score**. - 0 to 1
   - DecisionTreeRegressor: **mean squared error**.
+  - **mean squared error**: Squared value of the average value of error for prediction. 
 
-**Objective:** Assess the practicality of using music preferences as predictors for understanding and predicting mental well-being.
+**Objective:** Assess the practicality of using music preferences as predictors for mental well-being.
 
 ## 4. Result 
 ### Q1: What are the genres associated with the highest mental health issues?
@@ -131,29 +132,31 @@
 
 ![Alt text](figures/insomnia_hours.png?raw=true "insomnia_hours")
 
-### Q3: Can we accurately predict the anxiety, depression, and insomnia level based on their music taste or frequency using maching learning models?
+### Q3: Can we accurately predict the anxiety, depression, and insomnia level based on their music taste or frequency using machine learning models?
 
 **1. Can we accurately predict the anxiety level based on hours per day spent on music listening?**
 
-Mean Squared Error:  7.927178846908276
+**Mean Squared Error (MSE):  7.927178846908276.**
+- Since the MSE is about 7.927, the average value of error in prediction of anxiety level is approximately **2.81**. For example, if the model predicts the anxiety level of 6, the actual value could be between 3.19 and 8.81
 
 ![Alt text](figures/predict_anxiety_hours.png?raw=true "predict_anxiety_hours")
 
 **2. Can we accurately predict the depression level based on hours per day spent on music listening?**
 
-Mean Squared Error:  9.884870854441782
+**Mean Squared Error:  9.884870854441782**
+- Since the MSE is about 9.884, the average value of error in prediction of anxiety level is approximately **3.14**. For example, if the model predicts the anxiety level of 6, the actual value could be between 2.86 and 9.14
 
 ![Alt text](figures/predict_depression_hours.png?raw=true "predict_depression_hours")
 
 **3. Can we accurately predict the insomnia level based on hours per day spent on music listening?**
-
-Mean Squared Error:  10.33583624994101
-
+**Mean Squared Error:  10.33583624994101**
+- Since the MSE is about 10.335, the average value of error in prediction of anxiety level is approximately **3.21**. For example, if the model predicts the anxiety level of 6, the actual value could be between 2.79 and 9.21
 ![Alt text](figures/predict_insomnia_hours.png?raw=true "predict_insomnia_hours")
 
 **4. Can we accurately predict the anxiety level based on their music taste?**
 
-Mean Squared Error:  8.056713371052219
+**Mean Squared Error:  8.056713371052219**
+- Since the MSE is about 8.056, the average value of error in prediction of anxiety level is approximately **2.83**. For example, if the model predicts the anxiety level of 6, the actual value could be between 3.17 and 8.83.
 
 ![Alt text](figures/predict_anxiety_genre.png?raw=true "predict_anxiety_genre")
 
