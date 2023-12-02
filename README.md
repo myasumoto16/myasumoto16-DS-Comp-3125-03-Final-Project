@@ -79,7 +79,7 @@
   
 ### 3.4. Handling Imbalance: 
 
-- **SMOTE (Synthetic Minority Over-sampling Technique):** 
+- **SMOTE (Synthetic Minority Over-sampling Technique):**
     - addresses class imbalance in binary classification tasks.
     - designed for the minority class, SMOTE generates synthetic. 
     - By introducing synthetic examples, SMOTE helps balance class distribution, enhancing the model's ability to learn from the minority class and improving overall classification performance. 
@@ -104,134 +104,90 @@ A confusion matrix is a table that provides a detailed summary of the performanc
 
 
 ## 4. Results
-### Q1: What are the genres associated with the highest mental health issues?
-**1. What are the genres associated with the highest anxiety levels?**
-
-| Rank | Genre               | Anxiety Level     |
-|------|---------------------|-----------|
-| 1    | **Folk**                | 6.566667  |
-| 2    | K-pop               | 6.230769  |
-| 3    | Hip hop             | 6.200000  |
-| 4    | Rock                | 6.122340  |
-| 5    | Lofi                | 6.100000  |
-
-![Alt text](figures/anxiety_genre.png?raw=true "anxiety_genre")
-
-**2. What are the genres associated with the highest depression levels?**
-
-| Rank | Genre               | Depression Level     |
-|------|---------------------|-----------|
-| 1    | **Lofi**                | 6.600000  |
-| 2    | Hip hop             | 5.800000  |
-| 3    | EDM                 | 5.243243  |
-| 4    | Rock                | 5.236702  |
-| 5    | Metal               | 5.068182  |
+- [Code](https://www.kaggle.com/datasets/alexteboul/heart-disease-health-indicators-dataset)
+- **Disclaimer**: To run the code, go to Kernal -> Restart & Run All. It will take about 5 minutes for all the machine learning models to run 
 
 
-![Alt text](figures/depression_genre.png?raw=true "depression_genre")
+### 4.1. Which age range are you most likely to have heart issues?
 
-**3. What are the genres associated with the highest insomnia levels?**
+<img src="figures/age_range.png" width="1000">
 
-| Rank | Genre               | Insomnia Level     |
-|------|---------------------|-----------|
-| 1    | **Lofi**                | 5.600000  |
-| 2    | Gospel              | 5.333333  |
-| 3    | Metal               | 4.556818  |
-| 4    | Video game music    | 4.000000  |
-| 5    | EDM                 | 3.972973  |
+### 4.2. Do the smoking habits differ between people with and without heart issues?
+
+#### 4.2.1. How many people with a heart disease smoke?
+
+<img src="figures/smokers_disease.png" width="600">
 
 
-![Alt text](figures/insomnia_genre.png?raw=true "insomnia_genre")
+#### 4.2.2. How many people without a heart disease smoke?
 
-### Q2: How much impact hours of music listening have on anxiety, depression, and insomnia levels?
-**1. How much impact hours of music listening have on anxiety level?**
-
-| Rank | Hours per day  | Anxiety Level    |
-|------|----------|------------|
-| 1    | 13.0     | 10.000000  |
-| 2    | 9.0      | 9.666667   |
-| 3    | 18.0     | 9.000000   |
-| 4    | 20.0     | 8.000000   |
-| 5    | 10.0     | 6.700000   |
+<img src="figures/smokers_non_disease.png" width="600">
 
 
-![Alt text](figures/anxiety_hours.png?raw=true "anxiety_hours")
+### 4.3. Can we accurately predict the anxiety, depression, and insomnia level based on their music taste or frequency using machine learning models?
 
-**2. How much impact hours of music listening have on depression level?**
+#### 4.3.1. LogisticRegressor
 
-| Rank | Hours per day  | Depression Level    |
-|------|----------|------------|
-| 1    | 13.0     | 10.000000  |
-| 2    | 20.0     | 10.000000  |
-| 3    | 14.0     | 10.000000  |
-| 4    | 18.0     | 8.000000   |
-| 5    | 12.0     | 7.111111   |
+**Accuracy:  0.7552822453484705 -> approximately 76%**
+- The classification report below presents a detailed assessment of a binary classification model. While achieving high precision for the '0.0' class, the model shows lower recall, suggesting some instances are overlooked. On the other hand, for the '1.0' class, the model has higher recall but at the expense of precision, resulting in a trade-off between false positives and false negatives. The overall model accuracy is 76%.
 
 
-![Alt text](figures/depression_hours.png?raw=true "depression_hours")
+<img src="figures/LogisticRegression.png" width="600">
 
-**3. How much impact hours of music listening have on insomnia level?**
 
-| Rank | Hours per day | Insomnia Level    |
-|------|----------|------------|
-| 1    | 13.0     | 10.000000  |
-| 2    | 20.0     | 10.000000  |
-| 3    | 14.0     | 8.000000   |
-| 4    | 9.0      | 7.000000   |
-| 5    | 15.0     | 6.000000   |
+  **Classification Report for LogisticRegressor:**
 
-![Alt text](figures/insomnia_hours.png?raw=true "insomnia_hours")
+|              | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| 0.0          | 0.97      | 0.75   | 0.85     | 22971   |
+| 1.0          | 0.25      | 0.80   | 0.38     | 2397    |
+| **Accuracy** |           |        | 0.76     | 25368   |
+| **Macro Avg**| 0.61      | 0.78   | 0.62     | 25368   |
+| **Weighted Avg** | 0.91   | 0.76   | 0.80     | 25368   |
 
-### Q3: Can we accurately predict the anxiety, depression, and insomnia level based on their music taste or frequency using machine learning models?
 
-**1. Can we accurately predict the anxiety level based on hours per day spent on music listening?**
 
-**Mean Squared Error (MSE):  7.927178846908276.**
-- Since the MSE is about 7.927, the average value of error in prediction of anxiety level is approximately **2.81**. For example, if the model predicts an anxiety level of 6, the actual value could be between 3.19 and 8.81
 
-![Alt text](figures/predict_anxiety_hours.png?raw=true "predict_anxiety_hours")
+#### 4.3.2. XBGClassifier
 
-- In the figure above, we expect to see a linear relationship between actual and predicted anxiety values, which means as the predicted values increase, the actual values would increase. However, As seen in the figure, most of the predicted anxiety values are between 5 and 7 regardless of their corresponding actual anxiety levels. This observation aligns with the MSE of 7.927 as well since it's relatively large considering that the anxiety level collected is between 0 and 10. 
+**Accuracy:  0.8956953642384106 -> approximately 90%**
 
-**2. Can we accurately predict the depression level based on hours per day spent on music listening?**
+- The classification report below presents a detailed assessment of a binary classification model. While achieving high precision for the '0.0' class, the model shows lower recall, suggesting some instances are overlooked. On the other hand, for the '1.0' class, the model has higher recall but at the expense of precision, resulting in a trade-off between false positives and false negatives. The overall model accuracy is 76%.
 
-**Mean Squared Error:  9.884870854441782**
-- Since the MSE is about 9.884, the average value of error in prediction of anxiety level is approximately **3.14**. For example, if the model predicts a depression level of 6, the actual value could be between 2.86 and 9.14
+<img src="figures/XGBClassifier.png" width="600">
 
-![Alt text](figures/predict_depression_hours.png?raw=true "predict_depression_hours")
-
-- In the figure above, we expect to see a linear relationship between actual and predicted depression values. However, most of the predicted depression values are between 4 and 7 regardless of their corresponding actual depression levels. This observation also aligns with the MSE of 9.884. 
-
-**3. Can we accurately predict the insomnia level based on hours per day spent on music listening?**
-**Mean Squared Error:  10.33583624994101**
-- Since the MSE is about 10.335, the average value of error in prediction of anxiety level is approximately **3.21**. For example, if the model predicts an insomnia level of 6, the actual value could be between 2.79 and 9.21.
+**Classification Report for XBGClassifier:**
+-  For the '0.0' class, the model demonstrates high precision (0.92) and recall (0.97), resulting in a F1-score of 0.94. However, for the '1.0' class, precision is lower (0.40) with a modest recall (0.21), leading to a F1-score of 0.28. The overall accuracy of the model is 90%.
   
-![Alt text](figures/predict_insomnia_hours.png?raw=true "predict_insomnia_hours")
 
-- In the figure above, we expect to see a linear relationship between actual and predicted insomnia levels. However, most of the predicted insomnia levels are between 3 and 7 regardless of their corresponding actual insomnia levels. There is no linear progression in the graph. This observation also aligns with the MSE of 10.335. 
-
-**4. Can we accurately predict the anxiety level based on their music taste?**
-
-**Mean Squared Error:  8.056713371052219**
-- Since the MSE is about 8.056, the average value of error in prediction of anxiety level is approximately **2.83**. For example, if the model predicts an anxiety level of 6, the actual value could be between 3.17 and 8.83.
-
-![Alt text](figures/predict_anxiety_genre.png?raw=true "predict_anxiety_genre")
-
-- In the figure above, we expect to see a linear relationship between actual and predicted anxiety levels. However, all of the predicted anxiety levels are between 4.8 and 6.4 regardless of their corresponding actual anxiety levels. There is no linear relationships observed in the graph. This observation also aligns with the MSE of 9.884. 
-
-**5. Can we accurately predict the depression level based on their music taste?**
-
-**Mean Squared Error:  9.107010534791192**
-
-- Since the MSE is about 9.107, the average value of error in prediction of anxiety level is approximately **3.01**. For example, if the model predicts a depression level of 6, the actual value could be between 2.99 and 9.01
+|              | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| 0.0          | 0.92      | 0.97   | 0.94     | 22971   |
+| 1.0          | 0.40      | 0.21   | 0.28     | 2397    |
+| **Accuracy** |           |        | 0.90     | 25368   |
+| **Macro Avg**| 0.66      | 0.59   | 0.61     | 25368   |
+| **Weighted Avg** | 0.87   | 0.90   | 0.88     | 25368   |
 
 
-![Alt text](figures/predict_depression_genre.png?raw=true "predict_depression_genre")
 
-**6. Can we accurately predict the insomnia level based on their music taste?**
+#### 4.3.3. Kth Neareast Neighbors
+**Accuracy:  0.7710895616524756 -> approximately 77%**
+- The model achieves a high precision of 0.94 for the '0.0' class, with a lower recall of 0.79. Additionally, the '1.0' class has a lower precision (0.22) but a higher recall (0.55), leading to a F1-score of 0.31. The overall accuracy of the model is 77%. 
 
-**Mean Squared Error:  9.782376453165558**
+<img src="figures/KNeighbors.png" width="600">
 
-- Since the MSE is about 10.335, the average value of error in prediction of anxiety level is approximately **3.12**. For example, if the model predicts an insomnia level of 6, the actual value could be between 2.88 and 9.12.
-  
-![Alt text](figures/predict_insomnia_genre.png?raw=true "predict_insomnia_genre")
+**Classification Report for Kth Neareast Neighbors:**
+
+|              | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| 0.0          | 0.94      | 0.79   | 0.86     | 22971   |
+| 1.0          | 0.22      | 0.55   | 0.31     | 2397    |
+| **Accuracy** |           |        | 0.77     | 25368   |
+| **Macro Avg**| 0.58      | 0.67   | 0.59     | 25368   |
+| **Weighted Avg** | 0.88   | 0.77   | 0.81     | 25368   |
+
+![Alt text](figures/KNeighbors.png?raw=true "KNeighbors")
+
+
+
+
