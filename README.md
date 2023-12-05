@@ -254,9 +254,9 @@ In this heart disease indicator analysis, I analyzed age-related trends, differe
 
 ## References
 [1] [Heart Disease Health Indicators Dataset](https://www.kaggle.com/datasets/alexteboul/heart-disease-health-indicators-dataset)  
-[2] [CDC – 2015 BRFSS Survey Data and Documentation](https://www.cdc.gov/brfss/annual_data/annual_2015.html)
-[3] [scikit-learn Machine Learning in Python](https://scikit-learn.org/stable/)  
-[4] [SMOTE](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html)  
+[2] [CDC – 2015 BRFSS Survey Data and Documentation](https://www.cdc.gov/brfss/annual_data/annual_2015.html)  
+[3] [scikit-learn Machine Learning in Python](https://scikit-learn.org/stable/)   
+[4] [SMOTE](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html)    
 
 
 
