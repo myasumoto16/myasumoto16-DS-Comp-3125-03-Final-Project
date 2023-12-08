@@ -102,7 +102,7 @@ A confusion matrix is a table that provides a detailed summary of the performanc
 
 
 ## Results
-- [Code](https://www.kaggle.com/datasets/alexteboul/heart-disease-health-indicators-dataset)
+- [Code](https://github.com/myasumoto16/myasumoto16-DS-Comp-3125-03-Final-Project/blob/main/Heart%20Disease.ipynb)
 - **Disclaimer**: To run the code, go to Kernal -> Restart & Run All. It will take about 5 minutes for all the machine learning models to run 
 
 
