@@ -41,7 +41,7 @@
 
 ### 2. Machine Learning Models
 
-- For Q3, "Which machine learning model among LogisticRegression, RandomForestClassifier, XGBClassifier, KNeighborsClassifier is the most suitable for predicting heart issues?"
+- For Q3, "Which machine learning model among LogisticRegression, XGBClassifier, DecisionTreeClassifier is the most suitable for predicting heart issues?"
 - Sklearn models below were picked based on their suitability for binary classifications:
 
 #### 2.1. Logistic Regression
@@ -58,13 +58,11 @@
 - High predictive performance, handles non-linear relationships well, and includes regularization to prevent overfitting.
 - Considerations: May require tuning of hyperparameters.
 
-#### 2.3. KNeighborsClassifier
-
-- Nature: Classifications of instances based on the majority class of their k-nearest neighbors.
-- Suitable for binary classification tasks, especially when local patterns in the data are important.
-- Simple conceptually, non-linear relationships are implicitly captured.
-- Considerations: Sensitive to the choice of k, computationally expensive for large datasets.
-
+#### 2.3. DecisionTreeClassifier
+- Supervised learning algorithm that constructs a tree structure to make predictions based on feature conditions.
+- Well-suited for binary classification tasks due to its ability to create decision boundaries based on feature conditions.
+- Assumes axis-aligned decision boundaries, potentially limiting its ability to capture complex, non-linear patterns.
+- 
 ### 3. Dataset Division:
 
   - Train (90%) and test (10%) subsets.
@@ -168,21 +166,22 @@ A confusion matrix is a table that provides a detailed summary of the performanc
 
 
 
-#### 3.3. Kth Neareast Neighbors
-**Accuracy:  0.7710895616524756 -> approximately 77%**
-- The model achieves a high precision of 0.94 for the '0.0' class, with a lower recall of 0.79. Additionally, the '1.0' class has a lower precision (0.22) but a higher recall (0.55), leading to a F1-score of 0.31. The overall accuracy of the model is 77%. 
+#### 3.3. DecisionTreeClassifier
+**Accuracy:  0.858483128350678 -> approximately 86%**
+- The model achieves a high precision of 0.93 for the '0.0' class, with a high recall of 0.92. Additionally, the '1.0' class has a lower precision (0.27) but a low recall (0.29), leading to a F1-score of 0.28. The overall accuracy of the model is 86%. 
 
-<img src="figures/KNeighbors.png" width="600">
+<img src="figures/DecisionTreeClassifier.png" width="600">
 
-**Classification Report for Kth Neareast Neighbors:**
+**Classification Report for DecisionTreeClassifier:**
 
-|              | Precision | Recall | F1-Score | Support |
-|--------------|-----------|--------|----------|---------|
-| 0.0          | 0.94      | 0.79   | 0.86     | 22971   |
-| 1.0          | 0.22      | 0.55   | 0.31     | 2397    |
-| **Accuracy** |           |        | 0.77     | 25368   |
-| **Macro Avg**| 0.58      | 0.67   | 0.59     | 25368   |
-| **Weighted Avg** | 0.88   | 0.77   | 0.81     | 25368   |
+|           | Precision | Recall | F1-Score | Support |
+|-----------|-----------|--------|----------|---------|
+|     0.0   |   0.93    |  0.92  |   0.92   |  22971  |
+|     1.0   |   0.27    |  0.29  |   0.28   |   2397  |
+|**Accuracy**|           |        |   0.86   |  25368  |
+|**Macro Avg**|   0.60    |  0.60  |   0.60   |  25368  |
+|**Weighted Avg**| 0.86  |  0.86  |   0.86   |  25368  |
+
 
 
 ## Discussion
@@ -202,19 +201,19 @@ XGBClassifier outperformed Logistic Regression with an accuracy of approximately
 - Robust predictions of non-heart disease instances.
 - For the '1.0' class, the precision (0.40) and recall (0.21) were lower, suggesting room for improvement in identifying instances of heart disease.
 
-#### 1.3 KNeighborsClassifier
-It achieved an accuracy of approximately **77%**. 
-- High precision (0.94) and lower recall (0.79) for the '0.0' class.
-- For the '1.0' class, the precision (0.22) was lower, but recall (0.55) was higher compared to XGBClassifier, resulting in a different trade-off between false positives and false negatives.
-
+#### 1.3 DecisionTreeClassifier
+It achieved an accuracy of approximately **86%**. 
+- High precision (0.93) and high recall (0.92) for the '0.0' class.
+- For the '1.0' class, the precision (0.27) and recall (0.29) were lower compared to XGBClassifier.
+  
 ### 2. Model Suitability
 
 The choice of the most suitable model depends on the specific requirements and constraints of the problem at hand. In the context of predicting heart disease:
 
 - **XGBClassifier (XGBoost)** appears to be the most accurate among the models considered. It excels in correctly predicting instances without heart disease but may benefit from further tuning to improve sensitivity to heart disease cases.
-
-- **KNeighborsClassifier** provides a balanced approach with moderate accuracy. It may be considered if a more balanced trade-off between false positives and false negatives is desired.
-
+  
+- **DecisionTreeClassifier** provides a balanced approach with moderate accuracy with 86%
+  
 - **Logistic Regression** could be suitable if interpretability is a priority, given its simplicity and the interpretability of its coefficients.
 
 ### 3. Further Steps
@@ -243,9 +242,7 @@ In this heart disease indicator analysis, I analyzed age-related trends, differe
    - Disparities in smoking habits between those with and without heart issues were observed, emphasizing the need for possible interventions for somkers. 
 
 #### 1.3. **Model Performance:**
-   - **Logistic Regression:** Strong precision for non-heart disease instances but limitations in identifying heart disease cases (accuracy 76%).
    - **XGBClassifier:** Outperformed with high accuracy (90%) in predicting non-heart disease instances, with room for improvement in identifying heart disease cases.
-   - **KNeighborsClassifier:** Balanced approach with an accuracy of ~77%, demonstrating high precision for non-heart disease instances and a unique trade-off.
 
 ### 2. Further Steps:
 
