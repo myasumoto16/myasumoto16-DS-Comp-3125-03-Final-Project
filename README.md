@@ -7,7 +7,7 @@
 **Questions:**
 1. Which age range are you most likely to have heart issues?
 2. Do the smoking habits differ between people with and without heart issues?
-3. Which machine learning model among LogisticRegression, XGBClassifier, KNeighborsClassifier is the most suitable for predicting heart issues?
+3. Which machine learning model among LogisticRegression, XGBClassifier, DecisionTreeClassifier is the most suitable for predicting heart issues?
 
 
 ## Selection of Datasets
@@ -122,7 +122,7 @@ A confusion matrix is a table that provides a detailed summary of the performanc
 
 - Compared to people without a heart disease, people with heart disease are more likely to be smokers. 
 
-### 3. Can we accurately predict the anxiety, depression, and insomnia level based on their music taste or frequency using machine learning models?
+### 3. Which machine learning model among LogisticRegression, XGBClassifier, DecisionTreeClassifier is the most suitable for predicting heart issues?
 
 #### 3.1. LogisticRegressor
 
@@ -167,6 +167,7 @@ A confusion matrix is a table that provides a detailed summary of the performanc
 
 
 #### 3.3. DecisionTreeClassifier
+
 **Accuracy:  0.858483128350678 -> approximately 86%**
 - The model achieves a high precision of 0.93 for the '0.0' class, with a high recall of 0.92. Additionally, the '1.0' class has a lower precision (0.27) but a low recall (0.29), leading to a F1-score of 0.28. The overall accuracy of the model is 86%. 
 
