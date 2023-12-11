@@ -62,7 +62,7 @@
 - Supervised learning algorithm that constructs a tree structure to make predictions based on feature conditions.
 - Well-suited for binary classification tasks due to its ability to create decision boundaries based on feature conditions.
 - Assumes axis-aligned decision boundaries, potentially limiting its ability to capture complex, non-linear patterns.
-- 
+  
 ### 3. Dataset Division:
 
   - Train (90%) and test (10%) subsets.
